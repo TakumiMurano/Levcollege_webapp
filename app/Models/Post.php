@@ -23,10 +23,10 @@ class Post extends Model
     {
         return $this::with('category')->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
-    // Categoryに対するリレーション
-    //「1対多」の関係なので単数系に
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
+    // Categoryに対するリレーション
+    //「1対多」の関係なので単数系に
 }
